@@ -45,7 +45,7 @@
           "y": 0.0,
           "z": -0.05,
           "chord": 0.194,
-          "twist_deg": -0.2057158226702381,
+          "twist_deg": -2.0,
           "airfoil": "clarky"
         },
         {
@@ -53,7 +53,7 @@
           "y": 0.166,
           "z": -0.05,
           "chord": 0.194,
-          "twist_deg": -0.2057158226702381,
+          "twist_deg": -2.0,
           "airfoil": "clarky"
         }
       ],
@@ -167,7 +167,7 @@
     },
     {
       "name": "internal components",
-      "mass": 0.1,
+      "mass": 0.2,
       "x": 0.05,
       "y": 0.0,
       "z": -0.05,
