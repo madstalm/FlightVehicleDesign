@@ -102,7 +102,7 @@
       "length": 0.4,
       "width": 0.332,
       "height": 0.1,
-      "diameter": 0.0,
+      "diameter": null,
       "x_nose": -0.1,
       "y": 0.0,
       "z": -0.05,
@@ -143,7 +143,7 @@
   "masses": [
     {
       "name": "Main Wing",
-      "mass": 0.05,
+      "mass": null,
       "x": 0.25,
       "y": 0.0,
       "z": 0.0,
@@ -155,7 +155,7 @@
     },
     {
       "name": "Horizontal Tail",
-      "mass": 0.05,
+      "mass": null,
       "x": 0.25,
       "y": 0.0,
       "z": 0.0,
@@ -179,7 +179,7 @@
     },
     {
       "name": "Vertical tail",
-      "mass": 0.05,
+      "mass": null,
       "x": 0.25,
       "y": 0.0,
       "z": 0.0,
