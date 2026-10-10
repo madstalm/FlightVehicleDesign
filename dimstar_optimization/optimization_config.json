@@ -1,0 +1,121 @@
+{
+  "project": "/Users/sethleavitt/Desktop/FlightVehicleDesign/ProjectDimstar0.5.flightlab.json",
+  "variables": [
+    "wing_chord_m",
+    "outer_taper_ratio",
+    "tip_elevation_m",
+    "tip_twist_deg",
+    "tail_chord_m",
+    "tail_twist_deg",
+    "cg_x_m"
+  ],
+  "bounds": {
+    "wing_chord_m": [
+      0.14,
+      0.3
+    ],
+    "outer_taper_ratio": [
+      0.25,
+      1.0
+    ],
+    "tip_elevation_m": [
+      0.0,
+      0.2
+    ],
+    "tip_twist_deg": [
+      -6.0,
+      4.0
+    ],
+    "tail_chord_m": [
+      0.06,
+      0.2
+    ],
+    "tail_twist_deg": [
+      -8.0,
+      8.0
+    ],
+    "cg_x_m": [
+      0.02,
+      0.14
+    ]
+  },
+  "targets": {
+    "static_margin_min": 0.1,
+    "static_margin_max": 0.2,
+    "span_efficiency_min": 0.97,
+    "control_tolerance_deg": 0.05,
+    "penalty_weight": 1000.0
+  },
+  "arguments": {
+    "project": "ProjectDimstar0.5.flightlab.json",
+    "output_dir": "dimstar_optimization",
+    "case": "Cruise",
+    "adjustable_mass": "The entire plane",
+    "wing_airfoils": [
+      "e168",
+      "esa40",
+      "sd7037",
+      "e212",
+      "fx62k131",
+      "s1223",
+      "clarky",
+      "naca2412"
+    ],
+    "tail_airfoils": [
+      "naca0012",
+      "naca64a210"
+    ],
+    "wing_chord_bounds": [
+      0.14,
+      0.3
+    ],
+    "taper_bounds": [
+      0.25,
+      1.0
+    ],
+    "tip_elevation_bounds": [
+      0.0,
+      0.2
+    ],
+    "tip_twist_bounds": [
+      -6.0,
+      4.0
+    ],
+    "tail_chord_bounds": [
+      0.06,
+      0.2
+    ],
+    "tail_twist_bounds": [
+      -8.0,
+      8.0
+    ],
+    "cg_bounds": [
+      0.02,
+      0.14
+    ],
+    "mass_x_bounds": [
+      -0.1,
+      0.35
+    ],
+    "static_margin_bounds": [
+      0.1,
+      0.2
+    ],
+    "span_efficiency_min": 0.97,
+    "control_tolerance": 0.05,
+    "penalty_weight": 1000.0,
+    "maxiter": 60,
+    "popsize": 8,
+    "tol": 0.0001,
+    "local_maxiter": 250,
+    "seed": 20261002,
+    "workers": -1,
+    "ns": 20,
+    "nc": 3,
+    "verify_ns": 56,
+    "verify_nc": 8,
+    "no_resume": false,
+    "verbose": true
+  },
+  "run_signature": "b5e8736ce9113eda0278a36524400d255f0ce5f1e584b8d1359fd8d2f4dad008"
+}

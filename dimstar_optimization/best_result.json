@@ -1,0 +1,74 @@
+{
+  "wing_airfoil": "e168",
+  "tail_airfoil": "naca0012",
+  "variables": {
+    "wing_chord_m": 0.3,
+    "outer_taper_ratio": 0.9694145110624034,
+    "tip_elevation_m": 0.10528526392001379,
+    "tip_twist_deg": 0.09030285466575365,
+    "tail_chord_m": 0.19429575858938847,
+    "tail_twist_deg": -0.2057158226702381,
+    "cg_x_m": 0.07678234789422095
+  },
+  "score": 0.13702191247279683,
+  "search_feasible": true,
+  "verified_feasible": true,
+  "all_cases_trimmed": true,
+  "search_metrics": {
+    "static_margin": 0.13409996204540292,
+    "span_efficiency": 0.9718068332391566,
+    "trim_deflection_deg": -3.965271626961355e-05,
+    "alpha_deg": 0.7439093820820966,
+    "cd_total": 0.13702034013488926,
+    "lift_to_drag": 0.3613031003461043,
+    "x_cg_m": 0.07678234789422096,
+    "x_np_m": 0.11669978826028926,
+    "mac_m": 0.2976692890677571,
+    "mass_kg": 0.8929999999999999,
+    "adjustable_mass_x_m": 0.13417772778256554
+  },
+  "verification": {
+    "Cruise": {
+      "trim_converged": true,
+      "alpha_deg": 0.7425723346545883,
+      "trim_deflection_deg": 0.0017204914817861145,
+      "static_margin": 0.13428318935857453,
+      "span_efficiency": 0.9716901859738466,
+      "cd_total": 0.1370234725313707,
+      "lift_to_drag": 0.3612948408526445
+    },
+    "Takeoff": {
+      "trim_converged": true,
+      "alpha_deg": 3.0002885119979754,
+      "trim_deflection_deg": -0.9435964526910786,
+      "static_margin": 0.1372579494127885,
+      "span_efficiency": 0.9786327815859872,
+      "cd_total": 0.14614813251358377,
+      "lift_to_drag": 1.3549505655620475
+    },
+    "Maneuver": {
+      "trim_converged": true,
+      "alpha_deg": 1.2601224976362042,
+      "trim_deflection_deg": -0.21307865922811414,
+      "static_margin": 0.13497133488945448,
+      "span_efficiency": 0.9737390281719772,
+      "cd_total": 0.135625115495183,
+      "lift_to_drag": 0.6159711758840558
+    }
+  },
+  "adjustable_mass_x_m": 0.13417772778256554,
+  "error": "",
+  "differential_evolution": {
+    "success": false,
+    "message": "Maximum number of iterations has been exceeded.",
+    "nit": 60,
+    "nfev": 3416
+  },
+  "local_refinement": {
+    "success": false,
+    "message": "The maximum number of iterations has been exceeded",
+    "nit": 250,
+    "nfev": 346
+  },
+  "run_signature": "b5e8736ce9113eda0278a36524400d255f0ce5f1e584b8d1359fd8d2f4dad008"
+}

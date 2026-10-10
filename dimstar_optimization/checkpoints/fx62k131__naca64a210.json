@@ -1,0 +1,74 @@
+{
+  "wing_airfoil": "fx62k131",
+  "tail_airfoil": "naca64a210",
+  "variables": {
+    "wing_chord_m": 0.14,
+    "outer_taper_ratio": 0.25,
+    "tip_elevation_m": 0.0038220944613534145,
+    "tip_twist_deg": -0.9377580725548361,
+    "tail_chord_m": 0.1983821436247274,
+    "tail_twist_deg": 7.459386700892407,
+    "cg_x_m": 0.14
+  },
+  "score": 245669.75725761065,
+  "search_feasible": false,
+  "verified_feasible": false,
+  "all_cases_trimmed": true,
+  "search_metrics": {
+    "static_margin": 0.21280073751463258,
+    "span_efficiency": 0.8395113542485123,
+    "trim_deflection_deg": -8.588243826523211,
+    "alpha_deg": -3.48595934012184,
+    "cd_total": 0.36972403897517847,
+    "lift_to_drag": 0.3608267712589169,
+    "x_cg_m": 0.14000000000000004,
+    "x_np_m": 0.16635438120663495,
+    "mac_m": 0.12384534712819187,
+    "mass_kg": 0.8929999999999999,
+    "adjustable_mass_x_m": 0.22826666666666673
+  },
+  "verification": {
+    "Cruise": {
+      "trim_converged": true,
+      "alpha_deg": -4.595131841951955,
+      "trim_deflection_deg": -7.997180675208032,
+      "static_margin": 0.21106151808392135,
+      "span_efficiency": 0.6386836026657118,
+      "cd_total": 0.369243174711055,
+      "lift_to_drag": 0.36129667485406486
+    },
+    "Takeoff": {
+      "trim_converged": true,
+      "alpha_deg": -1.0328598350678702,
+      "trim_deflection_deg": -8.67908625201913,
+      "static_margin": 0.2254298773289695,
+      "span_efficiency": 1.0020404728762136,
+      "cd_total": 0.4044022224831018,
+      "lift_to_drag": 1.3195410294706762
+    },
+    "Maneuver": {
+      "trim_converged": true,
+      "alpha_deg": -3.7803931844446703,
+      "trim_deflection_deg": -8.149673195496067,
+      "static_margin": 0.21470032656297056,
+      "span_efficiency": 0.920818950349919,
+      "cd_total": 0.3615358076898684,
+      "lift_to_drag": 0.6226857179262918
+    }
+  },
+  "adjustable_mass_x_m": 0.22826666666666673,
+  "error": "",
+  "differential_evolution": {
+    "success": false,
+    "message": "Maximum number of iterations has been exceeded.",
+    "nit": 60,
+    "nfev": 3416
+  },
+  "local_refinement": {
+    "success": true,
+    "message": "The lower bound for the trust-region radius has been reached",
+    "nit": 120,
+    "nfev": 174
+  },
+  "run_signature": "b5e8736ce9113eda0278a36524400d255f0ce5f1e584b8d1359fd8d2f4dad008"
+}
