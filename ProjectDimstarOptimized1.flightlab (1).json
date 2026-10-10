@@ -3,7 +3,6 @@
   "surfaces": [
     {
       "name": "Main wing",
-      "purpose": "wing",
       "trim_control": "fixed",
       "symmetric": true,
       "stations": [
@@ -24,11 +23,11 @@
           "airfoil": "e168"
         },
         {
-          "x_le": 0.00917564668127896,
-          "y": 0.6,
-          "z": 0.10528526392001379,
+          "x_le": 0.00989,
+          "y": 0.55,
+          "z": 0.047,
           "chord": 0.29082435331872103,
-          "twist_deg": 0.09030285466575365,
+          "twist_deg": 0.15,
           "airfoil": "e168"
         }
       ],
@@ -38,25 +37,24 @@
     },
     {
       "name": "Horizontal tail",
-      "purpose": "tail",
       "trim_control": "elevator",
       "symmetric": true,
       "stations": [
         {
-          "x_le": 0.72,
+          "x_le": 0.906,
           "y": 0.0,
-          "z": 0.04,
-          "chord": 0.19429575858938847,
-          "twist_deg": -0.2057158226702381,
-          "airfoil": "naca0012"
+          "z": -0.05,
+          "chord": 0.194,
+          "twist_deg": -2.0,
+          "airfoil": "clarky"
         },
         {
-          "x_le": 0.72,
-          "y": 0.25,
-          "z": 0.04,
-          "chord": 0.19429575858938847,
-          "twist_deg": -0.2057158226702381,
-          "airfoil": "naca0012"
+          "x_le": 0.906,
+          "y": 0.166,
+          "z": -0.05,
+          "chord": 0.194,
+          "twist_deg": -2.0,
+          "airfoil": "clarky"
         }
       ],
       "control_hinge_fraction": 0.75,
@@ -64,23 +62,22 @@
       "control_max_deg": 25.0
     },
     {
-      "name": "Vertical tail 1",
-      "purpose": "fin",
+      "name": "Vertical tail",
       "trim_control": "fixed",
       "symmetric": true,
       "stations": [
         {
-          "x_le": 0.68,
-          "y": -0.25,
-          "z": 0.04,
+          "x_le": 0.88,
+          "y": -0.166,
+          "z": -0.05,
           "chord": 0.22,
           "twist_deg": 0.0,
           "airfoil": "naca0012"
         },
         {
-          "x_le": 0.78,
-          "y": -0.25,
-          "z": 0.28,
+          "x_le": 0.98,
+          "y": -0.166,
+          "z": 0.21,
           "chord": 0.1,
           "twist_deg": 0.0,
           "airfoil": "naca0012"
@@ -102,86 +99,120 @@
   "bodies": [
     {
       "name": "MainFuselage",
-      "length": 0.3,
-      "width": null,
-      "height": null,
-      "diameter": 0.33,
-      "x_nose": null,
+      "length": 0.4,
+      "width": 0.332,
+      "height": 0.1,
+      "diameter": null,
+      "x_nose": -0.1,
       "y": 0.0,
-      "z": 0.0,
+      "z": -0.05,
       "count": 1,
       "drag_model": "streamlined_body",
       "drag_area": null,
-      "cone_fraction": 0.4
+      "cone_fraction": 0.2
     },
     {
       "name": "LeftBoom",
-      "length": 0.5,
+      "length": 1.0,
       "width": null,
       "height": null,
-      "diameter": 0.08,
-      "x_nose": 0.3,
+      "diameter": 0.0095,
+      "x_nose": 0.1,
       "y": -0.166,
-      "z": 0.0,
+      "z": -0.05,
       "count": 1,
       "drag_model": "streamlined_body",
       "drag_area": null,
-      "cone_fraction": 0.4
+      "cone_fraction": 0.0
     },
     {
       "name": "RightBoom",
-      "length": 0.5,
+      "length": 1.0,
       "width": null,
       "height": null,
-      "diameter": 0.08,
-      "x_nose": 0.3,
+      "diameter": 0.0095,
+      "x_nose": 0.1,
       "y": 0.166,
-      "z": 0.0,
+      "z": -0.05,
       "count": 1,
       "drag_model": "streamlined_body",
       "drag_area": null,
-      "cone_fraction": 0.4
+      "cone_fraction": 0.0
     }
   ],
   "masses": [
     {
-      "name": "The entire plane",
-      "mass": 0.6,
-      "x": 0.13417772778256554,
+      "name": "Main Wing",
+      "mass": null,
+      "x": 0.25,
       "y": 0.0,
       "z": 0.0,
+      "distributed": "surface_volume",
+      "span": null,
+      "attached_to": "Main wing",
+      "density": 30.0,
+      "skin_thickness": null
+    },
+    {
+      "name": "Horizontal Tail",
+      "mass": null,
+      "x": 0.25,
+      "y": 0.0,
+      "z": 0.0,
+      "distributed": "surface_volume",
+      "span": null,
+      "attached_to": "Horizontal tail",
+      "density": 30.0,
+      "skin_thickness": null
+    },
+    {
+      "name": "internal components",
+      "mass": 0.2,
+      "x": 0.05,
+      "y": 0.0,
+      "z": -0.05,
       "distributed": "point",
       "span": null,
       "attached_to": "",
       "density": null,
+      "skin_thickness": null
+    },
+    {
+      "name": "Vertical tail",
+      "mass": null,
+      "x": 0.25,
+      "y": 0.0,
+      "z": 0.0,
+      "distributed": "surface_volume",
+      "span": null,
+      "attached_to": "Vertical tail",
+      "density": 30.0,
       "skin_thickness": null
     }
   ],
   "cases": [
     {
       "name": "Cruise",
-      "speed": 30.0,
+      "speed": 16.0,
       "altitude": 1400.0,
       "load_factor": 1.0,
       "alpha_deg": 2.0,
       "interference": 0.05,
       "protuberance": 0.1,
       "f_other": 0.0,
-      "cooling": 0.0,
       "n_crit": 9.0,
       "xtr_upper": 1.0,
       "xtr_lower": 1.0
     },
     {
       "name": "Takeoff",
-      "speed": 15.0,
+      "speed": 10.0,
       "altitude": 1400.0,
       "load_factor": 1.0,
       "alpha_deg": 2.0,
       "interference": 0.05,
       "protuberance": 0.1,
       "f_other": 0.0,
-      "cooling": 0.0,
       "n_crit": 9.0,
       "xtr_upper": 1.0,
       "xtr_lower": 1.0
@@ -195,7 +226,6 @@
       "interference": 0.05,
       "protuberance": 0.1,
       "f_other": 0.0,
-      "cooling": 0.0,
       "n_crit": 9.0,
       "xtr_upper": 1.0,
       "xtr_lower": 1.0
@@ -776,7 +806,7 @@
     }
   },
   "propulsion": {
-    "battery": "B3S1300",
+    "battery": "B3S1000",
     "state_of_charge": 0.9,
     "battery_x": 0.02,
     "battery_y": 0.0,
@@ -785,25 +815,25 @@
     "propulsors": [
       {
         "name": "Propulsor 1",
-        "motor": "M1000",
-        "propeller": "P10x7",
-        "esc": "ESC30",
+        "motor": "M1260",
+        "propeller": "P10x4.7",
+        "esc": "ESC40",
         "throttle": 1.0,
         "x": -0.08,
-        "y": 0.1666,
-        "z": 0.0,
+        "y": 0.1,
+        "z": -0.05,
         "pitch_deg": 0.0,
         "yaw_deg": 0.0
       },
       {
         "name": "Propulsor 2",
-        "motor": "M1000",
-        "propeller": "P10x7",
-        "esc": "ESC30",
+        "motor": "M1260",
+        "propeller": "P10x4.7",
+        "esc": "ESC40",
         "throttle": 1.0,
         "x": -0.08,
-        "y": -0.1666,
-        "z": 0.0,
+        "y": -0.1,
+        "z": -0.05,
         "pitch_deg": 0.0,
         "yaw_deg": 0.0
       }
@@ -818,178 +848,118 @@
     "cap_width": 0.02
   },
   "motors": {
-    "M820": {
-      "key": "M820",
-      "name": "EMAX XA2212-820, 820 Kv",
-      "Kv_rpm": 820.0,
-      "resistance": 0.2,
-      "current_no_load": 0.6,
-      "current_max": 16.0,
-      "mass": 0.057,
-      "no_load_voltage": 11.1,
+    "M1100": {
+      "key": "M1100",
+      "name": "SunnySky X2216 II KV1100",
+      "Kv_rpm": 1100.0,
+      "resistance": 0.073,
+      "current_no_load": 0.9,
+      "current_max": 24.0,
+      "mass": 0.072,
+      "no_load_voltage": 10.0,
       "cells_min": 2,
-      "cells_max": 3,
-      "provisional": true,
-      "notes": "Kv, mass and current_max are the vendor's published figures for a real, orderable part and should be confirmed against the listing at order time. resistance and current_no_load are ESTIMATES -- vendors in this tier do not publish them -- and must be replaced by the TA thrust-stand measurement when measured course data are available. Lowest Kv here: turns a large propeller slowly, which is the efficient way to make thrust at low speed."
+      "cells_max": 4,
+      "notes": "Kv, resistance, no-load current, current_max and mass are SunnySky's published datasheet figures for this winding (no-load current quoted at 10 V); confirm them against the listing at order time. Lowest Kv in the catalog on the larger 22 x 16 mm stator: it turns the big slow-flyer propellers at a speed the data covers and carries 24 A doing it. 26 g heavier than the X2208, which on a 400 g airplane is not nothing. SunnySky recommends a 30 A ESC and the APC 9x4.7, 9x4.5, 9x6, 8x6 and 10x4.7."
     },
-    "M1000": {
-      "key": "M1000",
-      "name": "generic A2212-13T, 1000 Kv",
-      "Kv_rpm": 1000.0,
-      "resistance": 0.1,
-      "current_no_load": 0.85,
-      "current_max": 13.0,
-      "mass": 0.05,
-      "no_load_voltage": 11.1,
+    "M1260": {
+      "key": "M1260",
+      "name": "SunnySky X2208 KV1260",
+      "Kv_rpm": 1260.0,
+      "resistance": 0.122,
+      "current_no_load": 0.4,
+      "current_max": 15.0,
+      "mass": 0.046,
+      "no_load_voltage": 10.0,
       "cells_min": 2,
-      "cells_max": 3,
-      "provisional": true,
-      "notes": "Kv, mass and current_max are the vendor's published figures for a real, orderable part and should be confirmed against the listing at order time. resistance and current_no_load are ESTIMATES -- vendors in this tier do not publish them -- and must be replaced by the TA thrust-stand measurement when measured course data are available. The cheapest and most widely stocked motor of this class, and RC-1's baseline. Note the low current limit."
-    },
-    "M1250": {
-      "key": "M1250",
-      "name": "SunnySky X2216-11, 1250 Kv",
-      "Kv_rpm": 1250.0,
-      "resistance": 0.06,
-      "current_no_load": 1.1,
-      "current_max": 26.0,
-      "mass": 0.068,
-      "no_load_voltage": 11.1,
-      "cells_min": 2,
-      "cells_max": 3,
-      "provisional": true,
-      "notes": "Kv, mass and current_max are the vendor's published figures for a real, orderable part and should be confirmed against the listing at order time. resistance and current_no_load are ESTIMATES -- vendors in this tier do not publish them -- and must be replaced by the TA thrust-stand measurement when measured course data are available. Highest peak efficiency in the catalog, and 18 g heavier than the lightest. Whether that is worth it depends on the mission, which is the point."
+      "cells_max": 4,
+      "notes": "Kv, resistance, no-load current, current_max and mass are SunnySky's published datasheet figures for this winding (no-load current quoted at 10 V); confirm them against the listing at order time. The small 22 x 8 mm stator: lightest and cheapest motor here, the best peak efficiency of the three, and a peak that lands at only 6 A -- the right motor for a light, slow airplane, and RC-1's. SunnySky's static table gives 780 gf at 13.9 A on an APC 9x4.7 SF and 570 gf at 11.7 A on a 10x4.7 SF, both at 11.1 V, and recommends an 18 A ESC."
     },
     "M1400": {
       "key": "M1400",
-      "name": "generic A2212-10T, 1400 Kv",
+      "name": "SunnySky X2216 II KV1400",
       "Kv_rpm": 1400.0,
-      "resistance": 0.085,
-      "current_no_load": 1.45,
-      "current_max": 15.0,
-      "mass": 0.05,
-      "no_load_voltage": 11.1,
+      "resistance": 0.055,
+      "current_no_load": 1.3,
+      "current_max": 33.0,
+      "mass": 0.072,
+      "no_load_voltage": 10.0,
       "cells_min": 2,
-      "cells_max": 3,
-      "provisional": true,
-      "notes": "Kv, mass and current_max are the vendor's published figures for a real, orderable part and should be confirmed against the listing at order time. resistance and current_no_load are ESTIMATES -- vendors in this tier do not publish them -- and must be replaced by the TA thrust-stand measurement when measured course data are available. Highest Kv and the WORST peak efficiency, because peak efficiency ranks with I0*R/V and this motor's no-load current is high. Students expect the opposite."
+      "cells_max": 4,
+      "notes": "Kv, resistance, no-load current, current_max and mass are SunnySky's published datasheet figures for this winding (no-load current quoted at 10 V); confirm them against the listing at order time. Same can as the KV1100 with fewer turns of thicker wire: lower resistance, a no-load current of 1.3 A, and the WORST peak efficiency of the three despite the highest Kv, because peak efficiency ranks with I0*R. It needs about 16 A to reach that peak; on a small propeller at 3 A it is the least efficient motor here by a wide margin. SunnySky recommends a 40 A ESC and the APC 9x4.7, 9x4.5, 9x6, 8x6 and 7x6."
     }
   },
   "batteries": {
-    "B2S1300": {
-      "key": "B2S1300",
-      "name": "2S 7.4 V 1300 mAh 45C LiPo",
+    "B2S1500": {
+      "key": "B2S1500",
+      "name": "Turnigy 2S 7.4 V 1500 mAh 40C LiPo",
       "cells_series": 2,
       "cells_parallel": 1,
-      "capacity_ah": 1.3,
-      "mass": 0.075,
-      "c_rating": 45.0,
+      "capacity_ah": 1.5,
+      "mass": 0.085,
+      "c_rating": 40.0,
       "cell_resistance": 0.01,
       "cell_voltage_nominal": 3.7,
       "cell_voltage_full": 4.2,
       "cell_voltage_empty": 3.0,
-      "provisional": true,
-      "notes": "Widely stocked hobby pack. Mass is the vendor figure; cell_resistance is an ESTIMATE to be measured."
+      "notes": "Turnigy 1500 mAh 2S 40C with XT60; capacity, C rating and the 85 g mass are HobbyKing's listing, cell_resistance is an estimate (no pack vendor publishes it). Nearly the same mass and stored energy as B3S1000, delivered at two thirds the voltage: the same motor and propeller turn about a third slower on it."
     },
-    "B3S2200": {
-      "key": "B3S2200",
-      "name": "3S 11.1 V 2200 mAh 50C LiPo",
+    "B3S1000": {
+      "key": "B3S1000",
+      "name": "Turnigy 3S 11.1 V 1000 mAh 40C LiPo",
       "cells_series": 3,
       "cells_parallel": 1,
-      "capacity_ah": 2.2,
-      "mass": 0.185,
-      "c_rating": 50.0,
-      "cell_resistance": 0.008,
+      "capacity_ah": 1.0,
+      "mass": 0.09,
+      "c_rating": 40.0,
+      "cell_resistance": 0.013,
       "cell_voltage_nominal": 3.7,
       "cell_voltage_full": 4.2,
       "cell_voltage_empty": 3.0,
-      "provisional": true,
-      "notes": "70 g heavier than B3S1300 for 69% more energy. Whether that is a good trade is the endurance-versus-mass question, and it depends on the mission. cell_resistance is an ESTIMATE."
-    },
-    "B3S1300": {
-      "key": "B3S1300",
-      "name": "3S 11.1 V 1300 mAh 45C LiPo",
-      "cells_series": 3,
-      "cells_parallel": 1,
-      "capacity_ah": 1.3,
-      "mass": 0.115,
-      "c_rating": 45.0,
-      "cell_resistance": 0.012,
-      "cell_voltage_nominal": 3.7,
-      "cell_voltage_full": 4.2,
-      "cell_voltage_empty": 3.0,
-      "provisional": true,
-      "notes": "RC-1's baseline pack; its 115 g matches the battery row of the RC-1 component mass table. cell_resistance is an ESTIMATE."
+      "notes": "Turnigy 1000 mAh 3S 40C with XT60; capacity and C rating are HobbyKing's listing, the mass is typical for the pack (the listings disagree between 88 and 105 g: weigh one), and cell_resistance is an estimate. RC-1's baseline pack."
     }
   },
   "escs": {
-    "ESC30": {
-      "key": "ESC30",
-      "name": "30 A brushless ESC with 5 V BEC",
-      "current_max": 30.0,
-      "mass": 0.025,
-      "efficiency": 0.95,
-      "provisional": true
-    },
     "ESC40": {
       "key": "ESC40",
-      "name": "40 A brushless ESC with 5 V BEC",
+      "name": "SunnySky X-series 40 A airplane ESC, 4 A BEC",
       "current_max": 40.0,
-      "mass": 0.038,
-      "efficiency": 0.96,
-      "provisional": true
+      "mass": 0.04,
+      "efficiency": 0.96
     }
   },
   "propellers": {
     "P8x6": {
       "key": "P8x6",
       "name": "APC 8x6E",
-      "mass": 0.01,
+      "mass": 0.0139,
       "data": "apce_8x6",
       "diameter": null,
       "pitch": null,
+      "rpm_max": 23750.0,
       "points": [],
-      "notes": "performance measured; mass is a placeholder"
+      "notes": "APC thin electric; UIUC measured performance, APC published mass (0.49 oz). The only fast propeller here: p/D = 0.75 puts its efficiency peak near J = 0.6, and it is the one the KV1400 motor is sized for."
     },
-    "P9x6": {
-      "key": "P9x6",
-      "name": "APC 9x6E",
-      "mass": 0.012,
-      "data": "apce_9x6",
+    "P9x4.7": {
+      "key": "P9x4.7",
+      "name": "APC 9x4.7SF",
+      "mass": 0.0091,
+      "data": "apcsf_9x4.7",
       "diameter": null,
       "pitch": null,
+      "rpm_max": 7222.222222222223,
       "points": [],
-      "notes": "performance measured; mass is a placeholder"
+      "notes": "APC slow flyer; UIUC measured performance, APC published mass (0.32 oz). Thin, flexible blades meant for low rpm: APC rates the SF line to 65,000/D rpm, 7,200 rpm for this one, and the analysis warns when a motor spins it past that."
     },
-    "P10x5": {
-      "key": "P10x5",
-      "name": "APC 10x5E",
-      "mass": 0.014,
-      "data": "apce_10x5",
+    "P10x4.7": {
+      "key": "P10x4.7",
+      "name": "APC 10x4.7SF",
+      "mass": 0.0119,
+      "data": "apcsf_10x4.7",
       "diameter": null,
       "pitch": null,
+      "rpm_max": 6500.0,
       "points": [],
-      "notes": "performance measured; mass is a placeholder. Same diameter as P10x7 and less pitch, making it a controlled pitch comparison."
-    },
-    "P10x7": {
-      "key": "P10x7",
-      "name": "APC 10x7E",
-      "mass": 0.014,
-      "data": "apce_10x7",
-      "diameter": null,
-      "pitch": null,
-      "points": [],
-      "notes": "performance measured; mass is a placeholder. RC-1's baseline propeller, and the one on the thrust stand."
-    },
-    "P11x7": {
-      "key": "P11x7",
-      "name": "APC 11x7E",
-      "mass": 0.017,
-      "data": "apce_11x7",
-      "diameter": null,
-      "pitch": null,
-      "points": [],
-      "notes": "performance measured; mass is a placeholder"
+      "notes": "APC slow flyer; UIUC measured performance, APC published mass (0.42 oz). Largest disk in the catalog, which is the efficient way to make static thrust, at the cost of the highest torque demand. Same pitch as P9x4.7, so the pair is a controlled diameter comparison. SF rpm limit 6,500."
     }
   },
   "notes": "-Lifting Surfaces are tentatively planned\nVerified optimized design: wing=e168, tail=naca0012; Cruise static margin 13.43% MAC, span efficiency 0.97169, pitch-control deflection +0.00172 deg.",
